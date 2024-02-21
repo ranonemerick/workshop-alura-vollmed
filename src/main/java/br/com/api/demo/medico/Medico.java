@@ -21,6 +21,7 @@ public class Medico {
     @Enumerated(EnumType.ORDINAL)
     private Especialidade especialidade;
 
+    @Embedded
     private Endereco endereco;
 
 }
