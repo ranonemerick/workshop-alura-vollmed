@@ -1,9 +1,6 @@
 package br.com.api.demo.controller;
 
-import br.com.api.demo.medico.DadosCadastroMedico;
-import br.com.api.demo.medico.DadosListagemMedico;
-import br.com.api.demo.medico.Medico;
-import br.com.api.demo.medico.MedicoRepository;
+import br.com.api.demo.medico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +26,13 @@ public class MedicoController {
     @GetMapping
     public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemMedico::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados) {
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
     }
 
 }
