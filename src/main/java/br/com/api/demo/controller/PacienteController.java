@@ -1,6 +1,9 @@
 package br.com.api.demo.controller;
 
-import br.com.api.demo.paciente.*;
+import br.com.api.demo.domain.paciente.DadosListagemPaciente;
+import br.com.api.demo.domain.paciente.Paciente;
+import br.com.api.demo.domain.paciente.PacienteRepository;
+import br.com.api.demo.domain.paciente.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

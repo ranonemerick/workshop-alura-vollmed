@@ -1,4 +1,4 @@
-package br.com.api.demo.paciente;
+package br.com.api.demo.domain.paciente;
 
 public record DadosListagemPaciente(String nome, String email, String telefone) {
 

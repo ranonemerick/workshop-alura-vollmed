@@ -1,6 +1,9 @@
 package br.com.api.demo.controller;
 
-import br.com.api.demo.medico.*;
+import br.com.api.demo.domain.medico.DadosListagemMedico;
+import br.com.api.demo.domain.medico.Medico;
+import br.com.api.demo.domain.medico.MedicoRepository;
+import br.com.api.demo.domain.medico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

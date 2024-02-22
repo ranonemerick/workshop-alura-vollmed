@@ -1,4 +1,4 @@
-package br.com.api.demo.paciente;
+package br.com.api.demo.domain.paciente;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

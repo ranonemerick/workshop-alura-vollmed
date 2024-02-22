@@ -1,6 +1,6 @@
-package br.com.api.demo.medico;
+package br.com.api.demo.domain.medico;
 
-import br.com.api.demo.endereco.Endereco;
+import br.com.api.demo.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.*;
 

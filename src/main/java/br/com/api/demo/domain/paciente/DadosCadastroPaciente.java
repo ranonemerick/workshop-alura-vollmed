@@ -1,7 +1,6 @@
-package br.com.api.demo.paciente;
+package br.com.api.demo.domain.paciente;
 
-import br.com.api.demo.endereco.DadosEndereco;
-import br.com.api.demo.endereco.Endereco;
+import br.com.api.demo.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

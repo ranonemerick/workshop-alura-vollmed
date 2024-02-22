@@ -1,4 +1,4 @@
-package br.com.api.demo.medico;
+package br.com.api.demo.domain.medico;
 
 public enum Especialidade {
 

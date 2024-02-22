@@ -1,6 +1,6 @@
-package br.com.api.demo.medico;
+package br.com.api.demo.domain.medico;
 
-import br.com.api.demo.endereco.Endereco;
+import br.com.api.demo.domain.endereco.Endereco;
 
 public record DadosDetalhamentoMedico(Long id, String nome, String email, String crm, String telefone, Especialidade especialidade, Endereco endereco) {
 
