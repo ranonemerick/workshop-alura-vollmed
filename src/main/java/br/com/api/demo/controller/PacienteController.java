@@ -1,9 +1,6 @@
 package br.com.api.demo.controller;
 
-import br.com.api.demo.paciente.DadosCadastroPaciente;
-import br.com.api.demo.paciente.DadosListagemPaciente;
-import br.com.api.demo.paciente.Paciente;
-import br.com.api.demo.paciente.PacienteRepository;
+import br.com.api.demo.paciente.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +26,14 @@ public class PacienteController {
     public Page<DadosListagemPaciente> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable pagincao) {
         return repository.findAll(pagincao).map(DadosListagemPaciente::new);
     }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody DadosAtualizacaoPaciente dados) {
+        var paciente = repository.getReferenceById(dados.id());
+        paciente.atualizarInformacoes(dados);
+    }
+    
+
 
 }
