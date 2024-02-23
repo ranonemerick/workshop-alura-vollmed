@@ -21,7 +21,9 @@ public class AutenticacaoController {
     public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAtenticacao dados) {
         var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication = manager.authenticate(token);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("");
     }
+
+
 
 }
