@@ -3,13 +3,12 @@ package br.com.api.demo.domain.consulta.validacoes;
 import br.com.api.demo.domain.ValidacaoException;
 import br.com.api.demo.domain.consulta.DadosAgendamentoConsulta;
 import br.com.api.demo.domain.medico.MedicoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
-public class ValidadorMedicoAtivo {
+public class ValidadorMedicoAtivo implements ValidadorAgendamentoDeConsulta{
 
     private MedicoRepository repository;
 
-    public void validador(DadosAgendamentoConsulta dados) {
+    public void validar(DadosAgendamentoConsulta dados) {
         if (dados.idMedico() == null) {
             return;
         }

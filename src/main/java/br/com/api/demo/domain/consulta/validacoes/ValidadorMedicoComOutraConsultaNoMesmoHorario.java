@@ -4,7 +4,7 @@ import br.com.api.demo.domain.ValidacaoException;
 import br.com.api.demo.domain.consulta.ConsultaRepository;
 import br.com.api.demo.domain.consulta.DadosAgendamentoConsulta;
 
-public class ValidadorMedicoComOutraConsultaNoMesmoHorario {
+public class ValidadorMedicoComOutraConsultaNoMesmoHorario implements ValidadorAgendamentoDeConsulta{
 
     private ConsultaRepository repository;
 
