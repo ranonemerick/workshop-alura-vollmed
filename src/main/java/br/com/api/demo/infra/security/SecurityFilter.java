@@ -20,17 +20,18 @@ public class SecurityFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         var tokenJWT = recuperarToken(request);
-        var subject = tokenService.getSubject(tokenJWT);
-
+        if(tokenJWT != null) {
+            var subject = tokenService.getSubject(tokenJWT);
+        }
 
         filterChain.doFilter(request, response);
     }
 
     private String recuperarToken(HttpServletRequest request) {
         var authorizationHeader = request.getHeader("Authorization");
-        if(authorizationHeader == null) {
-            throw new RuntimeException("Token não enviado");
+        if(authorizationHeader != null) {
+            return authorizationHeader.replace("Barrer ", "");
         }
-        return authorizationHeader.replace("Bearer ", "");
+        return null;
     }
 }
