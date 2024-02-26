@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/consultas")
+@RequestMapping("consultas")
 public class ConsultaController {
 
     @Autowired
@@ -25,6 +25,4 @@ public class ConsultaController {
         agenda.agendar(dados);
         return ResponseEntity.ok(new DadosDetalhamentoConsulta(null,null,null,null));
     }
-
-
 }
