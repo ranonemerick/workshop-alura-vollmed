@@ -1,5 +1,6 @@
 package br.com.api.demo.domain.medico;
 
+import br.com.api.demo.domain.consulta.DadosAgendamentoConsulta;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -28,4 +29,5 @@ public interface MedicoRepository extends JpaRepository<Medico,Long> {
             WHERE m.id = :id
             """)
     Boolean findAtivoById(Long idMedico);
+
 }
