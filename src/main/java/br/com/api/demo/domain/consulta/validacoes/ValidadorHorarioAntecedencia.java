@@ -2,10 +2,12 @@ package br.com.api.demo.domain.consulta.validacoes;
 
 import br.com.api.demo.domain.ValidacaoException;
 import br.com.api.demo.domain.consulta.DadosAgendamentoConsulta;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 
+@Component
 public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoDeConsulta{
 
     public void validar(DadosAgendamentoConsulta dados) {
