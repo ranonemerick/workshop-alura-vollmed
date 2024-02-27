@@ -4,7 +4,6 @@ import br.com.api.demo.domain.ValidacaoException;
 import br.com.api.demo.domain.consulta.validacoes.ValidadorAgendamentoDeConsulta;
 import br.com.api.demo.domain.medico.Medico;
 import br.com.api.demo.domain.medico.MedicoRepository;
-import br.com.api.demo.domain.paciente.DadosDetalhamentoPaciente;
 import br.com.api.demo.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
