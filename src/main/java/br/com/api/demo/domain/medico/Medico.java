@@ -4,8 +4,8 @@ import br.com.api.demo.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Table(name = "medicos")
 @Entity(name = "Medico")
+@Table(name = "medicos")
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor

@@ -10,7 +10,6 @@ public record DadosAgendamentoConsulta(
 
         Long idMedico,
 
-
         @NotNull
         Long idPaciente,
 

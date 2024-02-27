@@ -4,6 +4,7 @@ import br.com.api.demo.domain.ValidacaoException;
 import br.com.api.demo.domain.consulta.validacoes.ValidadorAgendamentoDeConsulta;
 import br.com.api.demo.domain.medico.Medico;
 import br.com.api.demo.domain.medico.MedicoRepository;
+import br.com.api.demo.domain.paciente.DadosDetalhamentoPaciente;
 import br.com.api.demo.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,13 +27,13 @@ public class AgendaDeConsultas  {
     private List<ValidadorAgendamentoDeConsulta> validadores;
 
 
-    public void agendar(DadosAgendamentoConsulta dados) {
+    public DadosDetalhamentoConsulta agendar(DadosAgendamentoConsulta dados) {
         if(dados.idMedico() != null && !medicoRepository.existsById(dados.idMedico())) {
             throw new ValidacaoException("ID do médico informado nao existe!");
         }
 
         if(!pacienteRepository.existsById(dados.idPaciente())) {
-            throw new ValidacaoException("ID do médico informado nao existe!");
+            throw new ValidacaoException("ID do paciente informado nao existe!");
         }
 
         validadores.forEach(v -> v.validar(dados));
@@ -41,6 +42,8 @@ public class AgendaDeConsultas  {
         var paciente = pacienteRepository.getReferenceById(dados.idPaciente());
         var consulta = new Consulta(null, medico, paciente,dados.data());
         consultaRepository.save(consulta);
+
+        return new DadosDetalhamentoConsulta(consulta);
     }
 
     private Medico escolherMedico(DadosAgendamentoConsulta dados) {
